@@ -147,6 +147,30 @@ Return value:
 }
 ```
 
+## Call Server
+
+### Call the server via STDIN/OUT
+
+You can call the server using the following command:
+
+```bash
+python server.py
+```
+
+Then, please execute the following as standard input:
+
+```bash
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"manual-client","version":"0.1.0"}}}
+{"jsonrpc":"2.0","method":"notifications/initialized"}
+{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"task_status","arguments":{"status":"start"}}}
+```
+
+### Call the server via Python client
+
+```python
+python call_server.py
+```
+
 ## License
 
 MIT
